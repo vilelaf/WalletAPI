@@ -21,9 +21,10 @@ import com.wallet.entity.User;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
+@ActiveProfiles("test")
 public class UserRepositoryTest {
 	
-	public static final String EMAIL = "Teste@teste.com";
+	public static final String EMAIL = "email@teste.com";
 	
 	@Autowired
 	UserRepository repository;
@@ -57,7 +58,7 @@ public class UserRepositoryTest {
 	}
 	
 	public void testFindByEmail() {
-		Optional <User> response = repository.findByEmailEquals(EMAIL);  
+		Optional <User> response = repository.findByEmailEquals(EMAIL);  // Optional pq pode existir ou não, pra não dar nullpointer 
 		
 		assertTrue(response.isPresent()); // Pra validar que o usuário existe
 		assertEquals(response.get().getEmail(), EMAIL); // Pra ver se ele é o mesmo email que tem lá em cima

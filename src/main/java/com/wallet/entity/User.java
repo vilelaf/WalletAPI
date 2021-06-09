@@ -18,10 +18,13 @@ public class User implements Serializable{
 	@Id // Pro JPA saber que esse vai ser o Id da nossa tabela 
 	@GeneratedValue(strategy = GenerationType.IDENTITY)  // Pra gerar automaticamente o Id de forma sequencial
 	private Long id;
-	@Column(nullable = false)
+	
+	@Column(nullable = false) // Basicamente obriga a ter um valor, não permite valores nem vazios nem nulos
 	private String password;
+	
 	@Column(nullable = false)
 	private String name;
+	
 	@Column(nullable = false)
 	private String email;
 	
