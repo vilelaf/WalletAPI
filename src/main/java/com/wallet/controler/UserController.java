@@ -16,13 +16,15 @@ import com.wallet.entity.User;
 import com.wallet.response.Response;
 import com.wallet.service.UserService;
 
+import util.Bcrypt;
+
 // A anotação @Valid faz com que o body (o payload) seja validado.
 // A anotação @RequestBody esse método força a ter um body não vazio.
 // A BidindResult vai guardar as validações do DTO
 
 @RestController
 @RequestMapping("user") // A rota para o controle
-public class UserControler {
+public class UserController {
 
 	@Autowired
 	private UserService service;
@@ -47,7 +49,7 @@ public class UserControler {
 		u.setId(dto.getId());
 		u.setEmail(dto.getEmail());
 		u.setName(dto.getName());
-		u.setPassword(dto.getPassword());
+		u.setPassword(Bcrypt.getHash(dto.getPassword()));
 
 		return u;
 	}
@@ -57,8 +59,7 @@ public class UserControler {
 		dto.setId(u.getId());
 		dto.setEmail(u.getEmail());
 		dto.setName(u.getName());
-		dto.setPassword(u.getPassword());
-
+		
 		return dto;
 	}
 	
