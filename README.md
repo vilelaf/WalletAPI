@@ -3,7 +3,7 @@
 > Status: Em desenvolvimento.
 
 ## Conteúdo:
-O projeto referente à atividade do Curso API RESTfull com Spring Boot utilizando TDD, CI e CD. Usando JUnit 4 e JPQL para parâmetros de busca.
+O projeto referente à atividade do Curso API RESTfull com Spring Boot utilizando TDD, CI e CD. Usando JUnit 4 e JPQL para parâmetros de busca, com autentica.
 
 # Tecnologias utilizadas
 + Java
@@ -11,5 +11,6 @@ O projeto referente à atividade do Curso API RESTfull com Spring Boot utilizand
 + JPA / Hibernate
 + JUnit 4
 + Maven
++ PostgreSQL
 
 
