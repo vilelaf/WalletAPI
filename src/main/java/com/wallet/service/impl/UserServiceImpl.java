@@ -22,7 +22,7 @@ public class UserServiceImpl implements UserService{
 	}
 
 	@Override
-	public Optional<User> findbyEmail(String email) {
+	public Optional<User> findByEmail(String email) {
 		
 		return repository.findByEmailEquals(email);
 	}

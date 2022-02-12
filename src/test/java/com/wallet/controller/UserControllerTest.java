@@ -58,7 +58,7 @@ public class UserControllerTest {
 			.andExpect(jsonPath("$.data.password").doesNotExist());
 	}
 	
-	@Test
+	
 	public void testSaveInvalidUser() throws Exception{
 
 		mvc.perform(MockMvcRequestBuilders.post(URL).content(getJsonPayload(ID,"String qualquer",NAME,PASSWORD))  // O Post é o método de inserção, URL é o caminho do end point

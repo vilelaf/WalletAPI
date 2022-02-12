@@ -16,20 +16,17 @@ import com.wallet.entity.User;
 import com.wallet.response.Response;
 import com.wallet.service.UserService;
 
-import util.Bcrypt;
+import com.wallet.util.Bcrypt;
 
-// A anotação @Valid faz com que o body (o payload) seja validado.
-// A anotação @RequestBody esse método força a ter um body não vazio.
-// A BidindResult vai guardar as validações do DTO
 
 @RestController
-@RequestMapping("user") // A rota para o controle
+@RequestMapping("user") 
 public class UserController {
 
 	@Autowired
 	private UserService service;
 	
-	@PostMapping //método que cria um usuário é um post
+	@PostMapping 
 	public ResponseEntity <Response<UserDTO>> create(@Valid @RequestBody UserDTO dto, BindingResult result) {
 
 		Response <UserDTO> response = new Response<UserDTO>();
@@ -39,10 +36,10 @@ public class UserController {
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
 		}
 		
-		User user = service.save(this.convertDtoToEntity(dto)); // Isso aqui não já seria igual a um novo usuário ? 
+		User user = service.save(this.convertDtoToEntity(dto)); 
 		response.setData(this.convertEntityToDto(user)); // 
 		return ResponseEntity.status(HttpStatus.CREATED).body(response);
-	}
+	}	
 	
 	private User convertDtoToEntity(UserDTO dto) {
 		User u = new User();

@@ -17,8 +17,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import com.wallet.entity.User;
 
-// Isso aqui é uma classe de teste de repositório
-
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @ActiveProfiles("test")
@@ -29,7 +27,7 @@ public class UserRepositoryTest {
 	@Autowired
 	UserRepository repository;
 	
-	@Before //Executado Antes do teste 
+	@Before 
 	public void setUp() {
 		User u = new User();
 		u.setName("Set up User");
@@ -39,7 +37,7 @@ public class UserRepositoryTest {
 		repository.save(u);
 	}
 	
-	@After // executado depois do teste
+	@After 
 	public void tearDown() {
 		repository.deleteAll();
 	}

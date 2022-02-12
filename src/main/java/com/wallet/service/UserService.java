@@ -8,6 +8,6 @@ public interface UserService {
 
 	User save(User u);
 	
-	Optional <User> findbyEmail(String email);
+	Optional <User> findByEmail(String email);
 	
 }

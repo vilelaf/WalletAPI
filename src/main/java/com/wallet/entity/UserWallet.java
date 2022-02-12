@@ -11,15 +11,18 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import lombok.Data;
+
 @Entity
-@Table(name= "users_wallet")
+@Table(name= "users_wallet") 
+@Data
 public class UserWallet implements Serializable {
 
 	private static final long serialVersionUID = -8104860055294069590L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	@JoinColumn(name = "users", referencedColumnName = "id") // Ver pq o nome é users e no user controller ta user
+	@JoinColumn(name = "users", referencedColumnName = "id") 
 	@ManyToOne(fetch = FetchType.LAZY) // Quando Carregar o usuário dentro da user_wallet ele vai trazer apenas o ID // caso queira acessar outras propriedades do user ele faz uma nova busca isso poupa processamento.
 	private User users;
 	@JoinColumn(name= "wallet", referencedColumnName = "id")

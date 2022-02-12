@@ -32,16 +32,13 @@ public class UserServiceTest {
 	@Before
 	public void setUp() {
 		BDDMockito.given(repository.findByEmailEquals(Mockito.anyString())).willReturn(Optional.of(new User()));
-		//O método findByEmailEquals retorna um optional de user. No mockito tem a função mockito.anyString()
-		//pra que independentemente do texto ele retorne tal coisa, no caso o optional de new user
+		
 	}
 	
 	@Test
 	public void testFindByEmail() {
-		Optional <User> user = service.findbyEmail("teste@email.com");
+		Optional <User> user = service.findByEmail("teste@email.com");
 		assertTrue(user.isPresent());
 	} 
-	
-	// Depois vem um método Save tmb, apesar de já ter sido testado na User Repository
-	
+		
 }
