@@ -3,7 +3,7 @@
 > Status: Em desenvolvimento.
 
 ## Conteúdo:
-O projeto referente de API RESTfull com Spring Boot utilizando TDD, CI e CD. Usando JUnit 4 e JPQL para parâmetros de busca, com autenticação por token.
+O projeto API RESTfull com Spring Boot utilizando TDD, CI e CD. Usando JUnit 4 e JPQL para parâmetros de busca, com autenticação por token.
 
 
 # Tecnologias utilizadas
