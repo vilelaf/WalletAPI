@@ -80,14 +80,14 @@ public class UserControllerTest {
 	}
 	
 	public String getJsonPayload(Long id, String email ,String name, String password) throws JsonProcessingException {  
-		UserDTO dto = new UserDTO(); // data transfer obj - Peneira da classe - 
+		UserDTO dto = new UserDTO(); 
 		dto.setId(id);
 		dto.setEmail(email);
 		dto.setName(name);
 		dto.setPassword(password);
 		
-		ObjectMapper mapper = new ObjectMapper();  // Não e
-		return mapper.writeValueAsString(dto); // Transformar numa String em formato Json
+		ObjectMapper mapper = new ObjectMapper();  
+		return mapper.writeValueAsString(dto); 
 		
 	}
 	
