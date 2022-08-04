@@ -21,7 +21,7 @@ import com.wallet.service.UserWalletService;
 import javassist.runtime.DotClass;
 
 @RestController
-@RequestMapping("user-wallet") // Se colocar um (path= "user-wallet) da no mesmo  
+@RequestMapping("user-wallet") // (path= "user-wallet)  
 public class UserWalletController {
 
 	@Autowired
