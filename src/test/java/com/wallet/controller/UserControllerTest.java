@@ -48,10 +48,10 @@ public class UserControllerTest {
 		
 		BDDMockito.given(service.save(Mockito.any(User.class))).willReturn(getMockUser()); 
 		
-		mvc.perform(MockMvcRequestBuilders.post(URL).content(getJsonPayload(ID,EMAIL,NAME,PASSWORD))  // O Post é o método de inserção, URL é o caminho do end point
-			.contentType(MediaType.APPLICATION_JSON) // O conteudo é getJsonPayload, é o método que pega a string payload em formato Json
-			.accept(MediaType.APPLICATION_JSON)) // Ele aceita 
-			.andExpect(status().isCreated()) // Condição final do teste deve ser um Status isCreated 
+		mvc.perform(MockMvcRequestBuilders.post(URL).content(getJsonPayload(ID,EMAIL,NAME,PASSWORD))  
+			.contentType(MediaType.APPLICATION_JSON) 
+			.accept(MediaType.APPLICATION_JSON)) 
+			.andExpect(status().isCreated()) 
 			.andExpect(jsonPath("$.data.id").value(ID))
 			.andExpect(jsonPath("$.data.email").value(EMAIL))
 			.andExpect(jsonPath("$.data.name").value(NAME))		
@@ -61,10 +61,10 @@ public class UserControllerTest {
 	
 	public void testSaveInvalidUser() throws Exception{
 
-		mvc.perform(MockMvcRequestBuilders.post(URL).content(getJsonPayload(ID,"String qualquer",NAME,PASSWORD))  // O Post é o método de inserção, URL é o caminho do end point
-			.contentType(MediaType.APPLICATION_JSON) // O conteudo é getJsonPayload, é o método que pega a string payload em formato Json
+		mvc.perform(MockMvcRequestBuilders.post(URL).content(getJsonPayload(ID,"String qualquer",NAME,PASSWORD))  
+			.contentType(MediaType.APPLICATION_JSON) 
 			.accept(MediaType.APPLICATION_JSON))
-			.andExpect(status().isBadRequest()) // Condição final do teste deve ser um Status isCreated 
+			.andExpect(status().isBadRequest()) 
 			.andExpect(jsonPath("$.errors[0]").value("Email ruim."));
 
 	}
