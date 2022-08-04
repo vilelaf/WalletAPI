@@ -23,7 +23,7 @@ public class UserWallet implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	@JoinColumn(name = "users", referencedColumnName = "id") 
-	@ManyToOne(fetch = FetchType.LAZY) // Quando Carregar o usuário dentro da user_wallet ele vai trazer apenas o ID // caso queira acessar outras propriedades do user ele faz uma nova busca isso poupa processamento.
+	@ManyToOne(fetch = FetchType.LAZY) 
 	private User users;
 	@JoinColumn(name= "wallet", referencedColumnName = "id")
 	@ManyToOne(fetch = FetchType.LAZY)
