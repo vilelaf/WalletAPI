@@ -56,10 +56,10 @@ public class UserRepositoryTest {
 	}
 	
 	public void testFindByEmail() {
-		Optional <User> response = repository.findByEmailEquals(EMAIL);  // Optional pq pode existir ou não, pra não dar nullpointer 
+		Optional <User> response = repository.findByEmailEquals(EMAIL);  
 		
-		assertTrue(response.isPresent()); // Pra validar que o usuário existe
-		assertEquals(response.get().getEmail(), EMAIL); // Pra ver se ele é o mesmo email que tem lá em cima
+		assertTrue(response.isPresent()); //
+		assertEquals(response.get().getEmail(), EMAIL); 
 	}
 
 }
