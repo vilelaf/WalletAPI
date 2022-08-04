@@ -12,8 +12,8 @@ import lombok.Setter;
 @NoArgsConstructor
 public class Response<T> {
 
-	private T data;  // O data é basicamente o tipo do payload que vai ser retornado.
-	private List <String> errors; // Erro, falhas de validação vão pra cá.
+	private T data; 
+	private List <String> errors;
 	
 	public List<String> getErrors(){
 		if (this.errors == null) {
