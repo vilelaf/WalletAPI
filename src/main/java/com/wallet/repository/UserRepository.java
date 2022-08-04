@@ -10,6 +10,6 @@ import com.wallet.entity.*;
 @Repository
 public interface UserRepository extends JpaRepository <User,Long> {
 
-	Optional <User> findByEmailEquals(String email); // A gente pode ter ou não um usuário por isso o Optional
+	Optional <User> findByEmailEquals(String email); 
 	
 }
