@@ -22,11 +22,11 @@ import lombok.Data;
 public class User implements Serializable{
 
 	private static final long serialVersionUID = 1L;
-	@Id // Pro JPA saber que esse vai ser o Id da nossa tabela 
-	@GeneratedValue(strategy = GenerationType.IDENTITY)  // Pra gerar automaticamente o Id de forma sequencial
+	@Id 
+	@GeneratedValue(strategy = GenerationType.IDENTITY)  
 	private Long id;
 	
-	@Column(nullable = false) // Basicamente obriga a ter um valor, não permite valores nem vazios nem nulos
+	@Column(nullable = false) 
 	private String password;
 	
 	@Column(nullable = false)
